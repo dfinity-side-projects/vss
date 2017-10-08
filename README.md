@@ -6,7 +6,7 @@
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)  
 
 This implements [verifiable secret sharing](https://en.wikipedia.org/wiki/Verifiable_secret_sharing) on top of [bls-lib](https://github.com/wanderer/bls-lib/).
-Its is based on [Shamir's scheme](https://en.wikipedia.org/wiki/Secret_sharing#Shamir.27s_scheme) but has the added benift that ths recipients can verify their shares against a verifcation vector. 
+Its is based on [Shamir's scheme](https://en.wikipedia.org/wiki/Secret_sharing#Shamir.27s_scheme) but has the added benefit that ths recipients can verify their shares against a verifcation vector. 
 This insures that dealer cannot hand out invalid shares.
 
 # INSTALL
