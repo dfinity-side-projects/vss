@@ -18,7 +18,7 @@
   "license": "MPL-2.0",
   "dependencies": {},
   "devDependencies": {
-    "bls-lib": "^0.2.0",
+    "bls-lib": "^0.3.0",
     "documentation": "^5.2.0",
     "istanbul": "^0.4.1",
     "nyc": "^11.2.1",
