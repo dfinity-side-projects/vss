@@ -1,0 +1,36 @@
+{
+  "name": "vss",
+  "version": "0.0.0",
+  "description": "this implements verifiable secret sharing",
+  "main": "index.js",
+  "scripts": {
+    "coveralls": "npm run coverage && nyc report --reporter=text-lcov | coveralls",
+    "coverage": "nyc npm test",
+    "lint": "standard",
+    "test": "node ./tests/index.js",
+    "build:docs": "documentation build --github  -f md ./index.js > ./docs/index.md"
+  },
+  "keywords": [
+    "crypto",
+    "vss"
+  ],
+  "author": "mjbecze <mjbecze@gmail.com>",
+  "license": "MPL-2.0",
+  "dependencies": {},
+  "devDependencies": {
+    "bls-lib": "^0.2.0",
+    "documentation": "^5.2.0",
+    "istanbul": "^0.4.1",
+    "nyc": "^11.2.1",
+    "standard": "^10.0.0",
+    "tape": "^4.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wanderer/genericmodule.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wanderer/genericmodule/issues"
+  },
+  "homepage": "https://github.com/wanderer/genericmodule"
+}
