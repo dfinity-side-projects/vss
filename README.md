@@ -14,7 +14,7 @@ This insures that dealer cannot hand out invalid shares.
 # USAGE
 
 ```javascript
-const vss = require(']]vss')
+const vss = require('vss')
 const bls = require('bls-lib')
 
 bls.onModuleInit(() => {
