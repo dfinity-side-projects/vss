@@ -28,10 +28,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:wanderer/genericmodule.git"
+    "url": "git@github.com:wanderer/vss.git"
   },
   "bugs": {
-    "url": "https://github.com/wanderer/genericmodule/issues"
+    "url": "https://github.com/wanderer/vss/issues"
   },
-  "homepage": "https://github.com/wanderer/genericmodule"
+  "homepage": "https://github.com/wanderer/vss"
 }
