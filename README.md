@@ -1,5 +1,4 @@
 # SYNOPSIS 
-[![NPM Package](https://img.shields.io/npm/v/vss.svg?style=flat-square)](https://www.npmjs.org/package/vss)
 [![Build Status](https://img.shields.io/travis/wanderer/vss.svg?branch=master&style=flat-square)](https://travis-ci.org/wanderer/vss)
 [![Coverage Status](https://img.shields.io/coveralls/wanderer/vss.svg?style=flat-square)](https://coveralls.io/r/wanderer/vss)
 
