@@ -1,6 +1,6 @@
 {
   "name": "vss",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "this implements verifiable secret sharing",
   "main": "index.js",
   "scripts": {
