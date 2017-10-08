@@ -19,6 +19,7 @@
   "dependencies": {},
   "devDependencies": {
     "bls-lib": "^0.3.0",
+    "coveralls": "^3.0.0",
     "documentation": "^5.2.0",
     "istanbul": "^0.4.1",
     "nyc": "^11.2.1",
