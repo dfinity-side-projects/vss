@@ -51,11 +51,11 @@ exports.createShare = function (bls, numOfShares, threshold) {
 /**
  * renew shares and verification vector, while keeping the secret
  * @param {Object} bls - an instance of [bls-lib](https://github.com/wanderer/bls-lib)
- * @param {Number} shares - the array of shares to be renewed (it is not possible to renew only some shares ; all must be)
+ * @param {Number} shares - the array of shares to be renewed (it is not possible to renew only some shares ; all must be). This array will not be modified, and new shares appear in the return object.
  * @param {Number} threshold - the number of share needed to recover the secret
  * @returns {Object} the return value contains the new `verifcationVector`, an array containing the new `shares`, and the `secret` (which has not changed in respect to the original shares)
  */
-exports.renewShare = function (bls, shares, threshold, old_vvec) {
+exports.renewShare = function (bls, shares, threshold, oldVvec) {
   // import secret
   // generate a sk and vvec
   const svec = []
@@ -98,21 +98,21 @@ exports.renewShare = function (bls, shares, threshold, old_vvec) {
     bls.free(sk)
   })
 
-  const new_vvec = old_vvec.map((pk, i) => {
+  const newVvec = oldVvec.map((pk, i) => {
     pk = bls.publicKeyImport(pk)
     bls.publicKeyAdd(pk, vvec[i])
     return pk
   })
 
   const results = {
-    verifcationVector: new_vvec.map(pk => bls.publicKeyExport(pk)),
+    verifcationVector: newVvec.map(pk => bls.publicKeyExport(pk)),
     shares: newShares,
     secret: bls.secretKeyExport(svec[0])
   }
 
   // clean up!
   bls.freeArray(vvec)
-  bls.freeArray(new_vvec)
+  bls.freeArray(newVvec)
   bls.freeArray(svec)
 
   return results
