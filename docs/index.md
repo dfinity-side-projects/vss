@@ -2,47 +2,103 @@
 
 ### Table of Contents
 
--   [createShare](#createshare)
--   [verifyShare](#verifyshare)
--   [recoverSecret](#recoversecret)
+-   [createShare][1]
+    -   [Parameters][2]
+-   [renewShare][3]
+    -   [Parameters][4]
+-   [verifyShare][5]
+    -   [Parameters][6]
+-   [recoverSecret][7]
+    -   [Parameters][8]
 
 ## createShare
 
-[index.js:9-49](https://github.com/wanderer/vss/blob/92df3e20d82af291a83c04d643f8a97439454217/index.js#L9-L49 "Source code on GitHub")
+[index.js:9-49][9]
 
 creates a secert to share, an array of shares to share and a verifaction vector
 
-**Parameters**
+### Parameters
 
--   `bls` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** an instance of [bls-lib](https://github.com/wanderer/bls-lib)
--   `numOfShares` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the number of share to create
--   `threshold` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** the number of share needed to recover the secret
+-   `bls` **[Object][10]** an instance of [bls-lib][11]
+-   `numOfShares` **[Number][12]** the number of share to create
+-   `threshold` **[Number][12]** the number of share needed to recover the secret
 
-Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** the return value contains `verifcationVector`, and array of `shares` and a random `secert`
+Returns **[Object][10]** the return value contains `verifcationVector`, and array of `shares` and a random `secert`
+
+## renewShare
+
+[index.js:58-119][13]
+
+renew shares and verification vector, while keeping the secret
+
+### Parameters
+
+-   `bls` **[Object][10]** an instance of [bls-lib][11]
+-   `shares` **[Number][12]** the array of shares to be renewed (it is not possible to renew only some shares ; all must be). This array will not be modified, and new shares appear in the return object.
+-   `threshold` **[Number][12]** the number of share needed to recover the secret
+-   `oldVvec`  
+
+Returns **[Object][10]** the return value contains the new `verifcationVector`, an array containing the new `shares`, and the `secret` (which has not changed in respect to the original shares)
 
 ## verifyShare
 
-[index.js:58-78](https://github.com/wanderer/vss/blob/92df3e20d82af291a83c04d643f8a97439454217/index.js#L58-L78 "Source code on GitHub")
+[index.js:128-148][14]
 
 verifys a share again a verifcation vector
 
-**Parameters**
+### Parameters
 
--   `bls` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** an instance of [bls-lib](https://github.com/wanderer/bls-lib)
--   `share` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** a share
--   `vvec` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** the verifcation vector
+-   `bls` **[Object][10]** an instance of [bls-lib][11]
+-   `share` **[Object][10]** a share
+-   `vvec` **[Array][15]** the verifcation vector
 
-Returns **[Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** 
+Returns **[Boolean][16]** 
 
 ## recoverSecret
 
-[index.js:85-96](https://github.com/wanderer/vss/blob/92df3e20d82af291a83c04d643f8a97439454217/index.js#L85-L96 "Source code on GitHub")
+[index.js:155-166][17]
 
 verifys a share again a verifcation vector
 
-**Parameters**
+### Parameters
 
 -   `bls`  
--   `shares` **[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)** an array of unque shares containing threshold number of shares
+-   `shares` **[Array][15]** an array of unque shares containing threshold number of shares
 
-Returns **[Uint8Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array)** the recovered secret
+Returns **[Uint8Array][18]** the recovered secret
+
+[1]: #createshare
+
+[2]: #parameters
+
+[3]: #renewshare
+
+[4]: #parameters-1
+
+[5]: #verifyshare
+
+[6]: #parameters-2
+
+[7]: #recoversecret
+
+[8]: #parameters-3
+
+[9]: https://github.com/wanderer/vss/blob/353905bd7a0d60a7ca7155c05f3fe9c5b5e4d176/index.js#L9-L49 "Source code on GitHub"
+
+[10]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[11]: https://github.com/wanderer/bls-lib
+
+[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number
+
+[13]: https://github.com/wanderer/vss/blob/353905bd7a0d60a7ca7155c05f3fe9c5b5e4d176/index.js#L58-L119 "Source code on GitHub"
+
+[14]: https://github.com/wanderer/vss/blob/353905bd7a0d60a7ca7155c05f3fe9c5b5e4d176/index.js#L128-L148 "Source code on GitHub"
+
+[15]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+[16]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean
+
+[17]: https://github.com/wanderer/vss/blob/353905bd7a0d60a7ca7155c05f3fe9c5b5e4d176/index.js#L155-L166 "Source code on GitHub"
+
+[18]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array
